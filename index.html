@@ -3,74 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
+  <title>Website</title>
+
   <style>
-    /* Exemplo básico de responsividade */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
-      background-color: #f5f5f5;
+      padding: 16px;
     }
+
     header {
-      width: 100%;
-      padding: 20px;
-      background-color: #003366;
-      color: white;
       text-align: center;
+      margin-top: 20px;
     }
+
+    h1 {
+      color: #60a5fa;
+      font-size: clamp(1.8rem, 6vw, 2.6rem);
+    }
+
     main {
-      width: 90%;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    footer {
+      max-width: 700px;
       width: 100%;
-      padding: 10px;
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      position: relative;
-      bottom: 0;
+      background: #020617;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 16px;
+      font-size: 0.9rem;
+      opacity: 0.7;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Bem-vindo ao Meu Site!</h1>
+  <h1 id="title"></h1>
 </header>
 
 <main>
-  <p>Este é um exemplo de site responsivo com tradução automática.</p>
+  <p id="description"></p>
+
+  <!-- TROQUE O LINK PELA SUA IMAGEM (RAW / IMGUR DIRETO) -->
+  <img src="https://i.imgur.com/8QZQZQZ.png" alt="Imagem do site">
+
+  <p id="info"></p>
 </main>
 
-<footer>
-  <p>© 2025 Meu Site</p>
-</footer>
+<footer id="footer"></footer>
 
 <script>
-  // Detecta o idioma do navegador
-  const userLang = navigator.language || navigator.userLanguage;
+/* =========================
+   TRADUÇÕES DO SITE
+   ========================= */
 
-  // Define o idioma padrão do site
-  const defaultLang = "pt"; // português
-
-  // Se o idioma for diferente do padrão, traduz automaticamente via Google Translate
-  if (!userLang.startsWith(defaultLang)) {
-    const translateUrl = "https://translate.google.com/translate?hl=&sl=pt&tl=" + userLang + "&u=" + encodeURIComponent(window.location.href);
-    window.location.href = translateUrl;
+const translations = {
+  pt: {
+    title: "Bem-vindo ao meu site 🌐",
+    description: "Este site muda automaticamente de idioma dependendo de quem acessa.",
+    info: "Se você estiver vendo isso em outra língua, a tradução foi feita automaticamente.",
+    footer: "Site criado por Murilex 🚀"
+  },
+  en: {
+    title: "Welcome to my website 🌐",
+    description: "This website automatically changes language depending on the visitor.",
+    info: "If you are seeing this in another language, it was translated automatically.",
+    footer: "Website created by Murilex 🚀"
+  },
+  es: {
+    title: "Bienvenido a mi sitio web 🌐",
+    description: "Este sitio cambia de idioma automáticamente según quien lo visite.",
+    info: "Si estás viendo esto en otro idioma, fue traducido automáticamente.",
+    footer: "Sitio web creado por Murilex 🚀"
   }
+};
+
+/* =========================
+   DETECÇÃO DE IDIOMA
+   ========================= */
+
+function getUserLanguage() {
+  const lang = navigator.language || navigator.userLanguage;
+  if (!lang) return "pt";
+  if (lang.startsWith("en")) return "en";
+  if (lang.startsWith("es")) return "es";
+  return "pt";
+}
+
+/* =========================
+   APLICAR TRADUÇÃO
+   ========================= */
+
+const userLang = getUserLanguage();
+const text = translations[userLang];
+
+document.getElementById("title").innerText = text.title;
+document.getElementById("description").innerText = text.description;
+document.getElementById("info").innerText = text.info;
+document.getElementById("footer").innerText = text.footer;
 </script>
 
 </body>
