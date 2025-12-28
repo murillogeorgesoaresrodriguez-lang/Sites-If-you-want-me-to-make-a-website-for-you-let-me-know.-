@@ -3,67 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website</title>
+  <title>História Interativa</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(160deg, #0f172a, #1e293b);
+      color: #f1f5f9;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px;
       min-height: 100vh;
-      padding: 16px;
     }
 
     header {
       text-align: center;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
       color: #60a5fa;
-      font-size: clamp(1.8rem, 6vw, 2.6rem);
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px #000;
     }
 
     main {
-      max-width: 700px;
+      max-width: 800px;
       width: 100%;
       background: #020617;
-      border-radius: 14px;
-      padding: 20px;
-      margin-top: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     img {
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       border-radius: 12px;
-      margin: 20px auto;
       display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
 
     footer {
       margin-top: auto;
-      padding: 16px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      color: #94a3b8;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -71,39 +77,51 @@
 </header>
 
 <main>
-  <p id="description"></p>
-
-  <!-- TROQUE O LINK PELA SUA IMAGEM (RAW / IMGUR DIRETO) -->
-  <img src="https://i.imgur.com/8QZQZQZ.png" alt="Imagem do site">
-
-  <p id="info"></p>
+  <p id="story"></p>
+  <img src="https://i.imgur.com/8QZQZQZ.png" alt="Imagem da história">
+  <p id="ending"></p>
 </main>
 
 <footer id="footer"></footer>
 
 <script>
 /* =========================
-   TRADUÇÕES DO SITE
+   HISTÓRIA TRADUZIDA AUTOMÁTICA
    ========================= */
 
 const translations = {
   pt: {
-    title: "Bem-vindo ao meu site 🌐",
-    description: "Este site muda automaticamente de idioma dependendo de quem acessa.",
-    info: "Se você estiver vendo isso em outra língua, a tradução foi feita automaticamente.",
-    footer: "Site criado por Murilex 🚀"
+    title: "A Lenda do Vale Esquecido 🌌",
+    story: `Há muito tempo, em um vale perdido entre montanhas que tocavam o céu, existia um povo que dominava os segredos da natureza. 
+    Cada amanhecer trazia um novo desafio, e cada estrela uma nova esperança. Entre árvores ancestrais e rios cristalinos, 
+    uma criança curiosa chamada Elara descobriu um portal secreto. Este portal não levava a outro lugar físico, mas a memórias do próprio mundo, 
+    revelando histórias que nunca haviam sido contadas. Conforme ela explorava, sombras antigas e sussurros esquecidos dançavam ao seu redor, 
+    testando sua coragem e sua bondade. Aos poucos, Elara percebeu que o verdadeiro segredo não era o portal, mas o poder de compreender a si mesma e os outros. 
+    Com cada passo, ela moldava o destino do vale, unindo passado e presente, medo e esperança, até finalmente encontrar a harmonia que faltava.`,
+    ending: "E assim, o Vale Esquecido floresceu novamente, como se cada história contada fosse uma semente plantada no coração de todos.",
+    footer: "2025 • Site criado por NeverBad667 🚀"
   },
   en: {
-    title: "Welcome to my website 🌐",
-    description: "This website automatically changes language depending on the visitor.",
-    info: "If you are seeing this in another language, it was translated automatically.",
-    footer: "Website created by Murilex 🚀"
+    title: "The Legend of the Forgotten Valley 🌌",
+    story: `Long ago, in a valley hidden among mountains that touched the sky, there lived a people who mastered the secrets of nature. 
+    Every sunrise brought a new challenge, and every star a new hope. Among ancient trees and crystal-clear rivers, a curious child named Elara discovered a secret portal. 
+    This portal did not lead to another physical place, but to memories of the world itself, revealing stories that had never been told. 
+    As she explored, ancient shadows and forgotten whispers danced around her, testing her courage and kindness. 
+    Gradually, Elara realized that the true secret was not the portal, but the power to understand herself and others. 
+    With each step, she shaped the destiny of the valley, uniting past and present, fear and hope, until finally finding the harmony that was missing.`,
+    ending: "And so, the Forgotten Valley flourished again, as if each story told were a seed planted in the hearts of all.",
+    footer: "2025 • Website created by NeverBad667 🚀"
   },
   es: {
-    title: "Bienvenido a mi sitio web 🌐",
-    description: "Este sitio cambia de idioma automáticamente según quien lo visite.",
-    info: "Si estás viendo esto en otro idioma, fue traducido automáticamente.",
-    footer: "Sitio web creado por Murilex 🚀"
+    title: "La Leyenda del Valle Olvidado 🌌",
+    story: `Hace mucho tiempo, en un valle perdido entre montañas que tocaban el cielo, existía un pueblo que dominaba los secretos de la naturaleza. 
+    Cada amanecer traía un nuevo desafío, y cada estrella una nueva esperanza. Entre árboles ancestrales y ríos cristalinos, 
+    un niño curioso llamado Elara descubrió un portal secreto. Este portal no conducía a otro lugar físico, sino a recuerdos del propio mundo, 
+    revelando historias que nunca habían sido contadas. A medida que exploraba, sombras antiguas y susurros olvidados danzaban a su alrededor, 
+    poniendo a prueba su valentía y bondad. Poco a poco, Elara se dio cuenta de que el verdadero secreto no era el portal, sino el poder de comprenderse a sí misma y a los demás. 
+    Con cada paso, moldeaba el destino del valle, uniendo pasado y presente, miedo y esperanza, hasta finalmente encontrar la armonía que faltaba.`,
+    ending: "Y así, el Valle Olvidado floreció de nuevo, como si cada historia contada fuera una semilla plantada en el corazón de todos.",
+    footer: "2025 • Sitio web creado por NeverBad667 🚀"
   }
 };
 
@@ -127,9 +145,10 @@ const userLang = getUserLanguage();
 const text = translations[userLang];
 
 document.getElementById("title").innerText = text.title;
-document.getElementById("description").innerText = text.description;
-document.getElementById("info").innerText = text.info;
+document.getElementById("story").innerText = text.story;
+document.getElementById("ending").innerText = text.ending;
 document.getElementById("footer").innerText = text.footer;
+
 </script>
 
 </body>
