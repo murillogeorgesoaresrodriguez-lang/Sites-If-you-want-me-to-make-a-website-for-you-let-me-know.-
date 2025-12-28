@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>História Interativa</title>
+  <title>História do Cachorro Nerd</title>
 
   <style>
     * {
@@ -45,6 +45,13 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
     p {
@@ -83,6 +90,7 @@
 </header>
 
 <main>
+  <img src="https://i.imgur.com/Qv7UhQa.jpeg" alt="Cachorro Nerd">
   <p id="story"></p>
   <p id="ending"></p>
 </main>
@@ -103,35 +111,33 @@
 
 const translations = {
   pt: {
-    title: "A Lenda do Vale Esquecido",
-    story: `Há muito tempo, em um vale perdido entre montanhas que tocavam o céu, existia um povo que dominava os segredos da natureza. 
-Cada amanhecer trazia um novo desafio, e cada estrela uma nova esperança. 🌟 Entre árvores ancestrais e rios cristalinos, 
-uma criança curiosa chamada Elara descobriu um portal secreto. Este portal não levava a outro lugar físico, mas a memórias do próprio mundo, 
-revelando histórias que nunca haviam sido contadas. ✨ Conforme ela explorava, sombras antigas e sussurros esquecidos dançavam ao seu redor, 
-testando sua coragem e sua bondade. Aos poucos, Elara percebeu que o verdadeiro segredo não era o portal, mas o poder de compreender a si mesma e os outros. 
-Com cada passo, ela moldava o destino do vale, unindo passado e presente, medo e esperança, até finalmente encontrar a harmonia que faltava.`,
-    ending: "E assim, o Vale Esquecido floresceu novamente, como se cada história contada fosse uma semente plantada no coração de todos.",
+    title: "A História do Cachorro Nerd",
+    story: `Em uma pequena cidade, vivia um cachorro chamado Tico, conhecido por seu incrível intelecto. 🐶💻
+Tico não gostava de brincar como os outros cães; em vez disso, passava horas estudando livros de ciência, 
+resolvendo enigmas e até programando pequenos robôs que o ajudavam a organizar seus ossos e brinquedos. 
+Com óculos sempre bem ajustados, ele se aventurava em laboratórios improvisados, criando invenções que ninguém jamais imaginou. 
+Apesar de sua mente brilhante, Tico tinha um coração enorme, sempre ajudando outros cães e humanos com suas descobertas.`,
+    ending: "E assim, Tico, o cachorro nerd, se tornou uma lenda na cidade, provando que inteligência e bondade andam sempre lado a lado.",
     footer: "2025 • Site criado por NeverBad667"
   },
   en: {
-    title: "The Legend of the Forgotten Valley",
-    story: `Long ago, in a valley hidden among mountains that touched the sky, there lived a people who mastered the secrets of nature. 
-Every sunrise brought a new challenge, and every star a new hope. 🌟 Among ancient trees and crystal-clear rivers, a curious child named Elara discovered a secret portal. 
-This portal did not lead to another physical place, but to memories of the world itself, revealing stories that had never been told. ✨ 
-As she explored, ancient shadows and forgotten whispers danced around her, testing her courage and kindness. Gradually, Elara realized that the true secret was not the portal, 
-but the power to understand herself and others. With each step, she shaped the destiny of the valley, uniting past and present, fear and hope, until finally finding the harmony that was missing.`,
-    ending: "And so, the Forgotten Valley flourished again, as if each story told were a seed planted in the hearts of all.",
+    title: "The Story of the Nerdy Dog",
+    story: `In a small town lived a dog named Tico, famous for his incredible intellect. 🐶💻
+Tico didn't like playing like other dogs; instead, he spent hours studying science books, solving puzzles, 
+and even programming small robots to help him organize his bones and toys. 
+With perfectly adjusted glasses, he ventured into improvised labs, creating inventions no one had ever imagined. 
+Despite his brilliant mind, Tico had a huge heart, always helping other dogs and humans with his discoveries.`,
+    ending: "And so, Tico, the nerdy dog, became a legend in the town, proving that intelligence and kindness always go hand in hand.",
     footer: "2025 • Website created by NeverBad667"
   },
   es: {
-    title: "La Leyenda del Valle Olvidado",
-    story: `Hace mucho tiempo, en un valle perdido entre montañas que tocaban el cielo, existía un pueblo que dominaba los secretos de la naturaleza. 
-Cada amanecer traía un nuevo desafío, y cada estrella una nueva esperanza. 🌟 Entre árboles ancestrales y ríos cristalinos, 
-un niño curioso llamado Elara descubrió un portal secreto. Este portal no conducía a otro lugar físico, sino a recuerdos del propio mundo, 
-revelando historias que nunca habían sido contadas. ✨ A medida que exploraba, sombras antiguas y susurros olvidados danzaban a su alrededor, 
-poniendo a prueba su valentía y bondad. Poco a poco, Elara se dio cuenta de que el verdadero secreto no era el portal, sino el poder de comprenderse a sí misma y a los demás. 
-Con cada paso, moldeaba el destino del valle, uniendo pasado y presente, miedo y esperanza, hasta finalmente encontrar la armonía que faltaba.`,
-    ending: "Y así, el Valle Olvidado floreció de nuevo, como si cada historia contada fuera una semilla plantada en el corazón de todos.",
+    title: "La Historia del Perro Nerd",
+    story: `En un pequeño pueblo vivía un perro llamado Tico, famoso por su increíble intelecto. 🐶💻
+A Tico no le gustaba jugar como los demás perros; en cambio, pasaba horas estudiando libros de ciencia, resolviendo enigmas, 
+e incluso programando pequeños robots que lo ayudaban a organizar sus huesos y juguetes. 
+Con gafas siempre bien ajustadas, se aventuraba en laboratorios improvisados, creando inventos que nadie había imaginado. 
+A pesar de su brillante mente, Tico tenía un gran corazón, siempre ayudando a otros perros y humanos con sus descubrimientos.`,
+    ending: "Y así, Tico, el perro nerd, se convirtió en una leyenda en el pueblo, demostrando que la inteligencia y la bondad siempre van de la mano.",
     footer: "2025 • Sitio web creado por NeverBad667"
   }
 };
