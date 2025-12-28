@@ -50,15 +50,7 @@
     p {
       font-size: 1.1rem;
       line-height: 1.7;
-    }
-
-    img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 12px;
-      display: block;
-      margin: 20px auto;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      text-align: justify;
     }
 
     footer {
@@ -67,6 +59,20 @@
       color: #94a3b8;
       text-align: center;
       padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .credits {
+      font-weight: bold;
+    }
+
+    .copyright {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
     }
   </style>
 </head>
@@ -78,11 +84,17 @@
 
 <main>
   <p id="story"></p>
-  <img src="https://i.imgur.com/8QZQZQZ.png" alt="Imagem da história">
   <p id="ending"></p>
 </main>
 
-<footer id="footer"></footer>
+<footer>
+  <div class="credits" id="footer"></div>
+  <div class="copyright">
+    <span>&copy;</span>
+    <span>Google</span>
+    <span>NeverBad667</span>
+  </div>
+</footer>
 
 <script>
 /* =========================
@@ -91,37 +103,36 @@
 
 const translations = {
   pt: {
-    title: "A Lenda do Vale Esquecido 🌌",
+    title: "A Lenda do Vale Esquecido",
     story: `Há muito tempo, em um vale perdido entre montanhas que tocavam o céu, existia um povo que dominava os segredos da natureza. 
-    Cada amanhecer trazia um novo desafio, e cada estrela uma nova esperança. Entre árvores ancestrais e rios cristalinos, 
-    uma criança curiosa chamada Elara descobriu um portal secreto. Este portal não levava a outro lugar físico, mas a memórias do próprio mundo, 
-    revelando histórias que nunca haviam sido contadas. Conforme ela explorava, sombras antigas e sussurros esquecidos dançavam ao seu redor, 
-    testando sua coragem e sua bondade. Aos poucos, Elara percebeu que o verdadeiro segredo não era o portal, mas o poder de compreender a si mesma e os outros. 
-    Com cada passo, ela moldava o destino do vale, unindo passado e presente, medo e esperança, até finalmente encontrar a harmonia que faltava.`,
+Cada amanhecer trazia um novo desafio, e cada estrela uma nova esperança. 🌟 Entre árvores ancestrais e rios cristalinos, 
+uma criança curiosa chamada Elara descobriu um portal secreto. Este portal não levava a outro lugar físico, mas a memórias do próprio mundo, 
+revelando histórias que nunca haviam sido contadas. ✨ Conforme ela explorava, sombras antigas e sussurros esquecidos dançavam ao seu redor, 
+testando sua coragem e sua bondade. Aos poucos, Elara percebeu que o verdadeiro segredo não era o portal, mas o poder de compreender a si mesma e os outros. 
+Com cada passo, ela moldava o destino do vale, unindo passado e presente, medo e esperança, até finalmente encontrar a harmonia que faltava.`,
     ending: "E assim, o Vale Esquecido floresceu novamente, como se cada história contada fosse uma semente plantada no coração de todos.",
-    footer: "2025 • Site criado por NeverBad667 🚀"
+    footer: "2025 • Site criado por NeverBad667"
   },
   en: {
-    title: "The Legend of the Forgotten Valley 🌌",
+    title: "The Legend of the Forgotten Valley",
     story: `Long ago, in a valley hidden among mountains that touched the sky, there lived a people who mastered the secrets of nature. 
-    Every sunrise brought a new challenge, and every star a new hope. Among ancient trees and crystal-clear rivers, a curious child named Elara discovered a secret portal. 
-    This portal did not lead to another physical place, but to memories of the world itself, revealing stories that had never been told. 
-    As she explored, ancient shadows and forgotten whispers danced around her, testing her courage and kindness. 
-    Gradually, Elara realized that the true secret was not the portal, but the power to understand herself and others. 
-    With each step, she shaped the destiny of the valley, uniting past and present, fear and hope, until finally finding the harmony that was missing.`,
+Every sunrise brought a new challenge, and every star a new hope. 🌟 Among ancient trees and crystal-clear rivers, a curious child named Elara discovered a secret portal. 
+This portal did not lead to another physical place, but to memories of the world itself, revealing stories that had never been told. ✨ 
+As she explored, ancient shadows and forgotten whispers danced around her, testing her courage and kindness. Gradually, Elara realized that the true secret was not the portal, 
+but the power to understand herself and others. With each step, she shaped the destiny of the valley, uniting past and present, fear and hope, until finally finding the harmony that was missing.`,
     ending: "And so, the Forgotten Valley flourished again, as if each story told were a seed planted in the hearts of all.",
-    footer: "2025 • Website created by NeverBad667 🚀"
+    footer: "2025 • Website created by NeverBad667"
   },
   es: {
-    title: "La Leyenda del Valle Olvidado 🌌",
+    title: "La Leyenda del Valle Olvidado",
     story: `Hace mucho tiempo, en un valle perdido entre montañas que tocaban el cielo, existía un pueblo que dominaba los secretos de la naturaleza. 
-    Cada amanecer traía un nuevo desafío, y cada estrella una nueva esperanza. Entre árboles ancestrales y ríos cristalinos, 
-    un niño curioso llamado Elara descubrió un portal secreto. Este portal no conducía a otro lugar físico, sino a recuerdos del propio mundo, 
-    revelando historias que nunca habían sido contadas. A medida que exploraba, sombras antiguas y susurros olvidados danzaban a su alrededor, 
-    poniendo a prueba su valentía y bondad. Poco a poco, Elara se dio cuenta de que el verdadero secreto no era el portal, sino el poder de comprenderse a sí misma y a los demás. 
-    Con cada paso, moldeaba el destino del valle, uniendo pasado y presente, miedo y esperanza, hasta finalmente encontrar la armonía que faltaba.`,
+Cada amanecer traía un nuevo desafío, y cada estrella una nueva esperanza. 🌟 Entre árboles ancestrales y ríos cristalinos, 
+un niño curioso llamado Elara descubrió un portal secreto. Este portal no conducía a otro lugar físico, sino a recuerdos del propio mundo, 
+revelando historias que nunca habían sido contadas. ✨ A medida que exploraba, sombras antiguas y susurros olvidados danzaban a su alrededor, 
+poniendo a prueba su valentía y bondad. Poco a poco, Elara se dio cuenta de que el verdadero secreto no era el portal, sino el poder de comprenderse a sí misma y a los demás. 
+Con cada paso, moldeaba el destino del valle, uniendo pasado y presente, miedo y esperanza, hasta finalmente encontrar la armonía que faltaba.`,
     ending: "Y así, el Valle Olvidado floreció de nuevo, como si cada historia contada fuera una semilla plantada en el corazón de todos.",
-    footer: "2025 • Sitio web creado por NeverBad667 🚀"
+    footer: "2025 • Sitio web creado por NeverBad667"
   }
 };
 
